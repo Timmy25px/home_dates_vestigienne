@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temps Vestigien</title>
+
+<style>
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* GLOBAL */
+body{
+  background:white;
+  color:black;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* CONTAINER */
+#container{
+  width:100%;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+/* INTRO */
+#intro{
+  opacity:0;
+  animation: fadeIn 2.5s forwards;
+}
+
+#intro h1{
+  font-size:2.2rem;
+  font-weight:500;
+  margin-bottom:1rem;
+}
+
+#intro p{
+  font-size:0.9rem;
+  opacity:0.7;
+}
+
+/* MAIN CONTENT */
+#main{
+  display:none;
+  opacity:0;
+  animation: fadeIn 2s forwards;
+}
+
+#main h1{
+  font-size:3rem;
+  letter-spacing:0.2em;
+  margin-bottom:3rem;
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+}
+
+.btn{
+  padding:15px 40px;
+  border:1px solid black;
+  background:transparent;
+  text-decoration:none;
+  color:black;
+  font-size:1rem;
+  letter-spacing:0.1em;
+  transition:all 0.3s ease;
+}
+
+.btn:hover{
+  background:black;
+  color:white;
+  transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+  position:fixed;
+  bottom:15px;
+  width:100%;
+  text-align:center;
+  font-size:0.75rem;
+  opacity:0.5;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes fadeOut{
+  from{opacity:1;}
+  to{opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div id="container">
+
+  <!-- INTRO -->
+  <div id="intro">
+    <h1>Crée avec <strong>GitHub</strong></h1>
+    <p>
+      Tous droits réservés — source : Github - @Timmy25px
+    </p>
+  </div>
+
+  <!-- MAIN -->
+  <div id="main">
+    <h1>SITE DU TEMPS VESTIGIEN</h1>
+    <div class="buttons">
+      <a class="btn" href="https://timmy25px.github.io/date_vestigienne/">
+        calendrier vestigien
+      </a>
+      <a class="btn" href="https://timmy25px.github.io/date_vestigienne_ll/">
+        calendrier vestigien ll
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Github - @Timmy25px
+</footer>
+
+<script>
+/* TRANSITION INTRO -> MAIN */
+setTimeout(() => {
+  const intro = document.getElementById("intro");
+  const main = document.getElementById("main");
+
+  intro.style.animation = "fadeOut 1.5s forwards";
+
+  setTimeout(() => {
+    intro.style.display = "none";
+    main.style.display = "block";
+    main.style.animation = "fadeIn 2s forwards";
+  }, 1500);
+
+}, 3000); // durée de l'intro
+</script>
+
+</body>
+</html>
+
